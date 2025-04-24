@@ -9,6 +9,10 @@ bash run.sh
 
 按照lm-evaluation-harness安装lm_eval
 
+### 公开结果
+
+本目录下[pub.md](pub.md)
+
 ### Result
 
 在deepseek-ai__DeepSeek-R1-Distill-Qwen-1.5B 和deepseek-ai__DeepSeek-R1-Distill-Qwen-7B上实现对MATH-500的评测
