@@ -1,0 +1,35 @@
+
+tag:
+  - math_word_problems
+task: math500
+dataset_path: arrow
+dataset_kwargs:
+  data_files:
+    # train: /path/to/arrow/train/data-00000-of-00001.arrow
+    test: math500/data-00000-of-00001.arrow
+output_type: generate_until
+# training_split: train
+# validation_split: validation
+test_split: test
+doc_to_text: "Return your final response within \\boxed{}. {{problem}}"
+doc_to_target: "{{answer}}"
+generation_kwargs:
+  until: []
+  # do_sample: True
+  temperature: 0.6
+  max_gen_toks: 8192
+repeats: 4
+# num_fewshot: 0
+# generation_kwargs:
+#   max_gen_toks: 32
+#   temperature: 1
+#   do_sample: True
+  
+metric_list:
+  - metric: !function metrics.check_correctness
+    aggregation: mean
+    higher_is_better: True
+
+metadata:
+  version: 1.0
+
